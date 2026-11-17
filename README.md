@@ -4,6 +4,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 [![Website](https://img.shields.io/badge/Website-GitHub%20Pages-0b0f19)](https://document-software.github.io/mac-pdf-editor/)
 
+![Mac PDF Editor Banner](./site/assets/og-banner.png)
+
 > **A lightweight (~6 MB), privacy-first desktop PDF editor** built with **Tauri v2 (Rust)**, **React + TypeScript**, **PDF.js**, **pdf-lib**, **lopdf**, and **macOS Vision OCR**. A fast, free open-source alternative to **Adobe Acrobat Pro**, **PDF Expert**, and **Apple Preview**.
 
 🌐 **Official Website & Guides:** [https://document-software.github.io/mac-pdf-editor/](https://document-software.github.io/mac-pdf-editor/)

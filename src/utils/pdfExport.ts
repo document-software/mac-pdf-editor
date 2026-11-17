@@ -197,6 +197,36 @@ export async function createBlankPdf(pageCount = 1): Promise<Uint8Array> {
   return doc.save();
 }
 
+export async function createDemoPdf(): Promise<Uint8Array> {
+  const doc = await PDFDocument.create();
+  const fontBold = await doc.embedFont(StandardFonts.HelveticaBold);
+  const fontReg = await doc.embedFont(StandardFonts.Helvetica);
+
+  const p1 = doc.addPage([595.28, 841.89]);
+  p1.drawText("Quarterly Product Specification", { x: 56, y: 760, size: 22, font: fontBold, color: rgb(0.1, 0.14, 0.22) });
+  p1.drawText("Prepared by Document Software • November 2026", { x: 56, y: 734, size: 11, font: fontReg, color: rgb(0.4, 0.45, 0.52) });
+  p1.drawLine({ start: { x: 56, y: 718 }, end: { x: 539, y: 718 }, thickness: 1, color: rgb(0.85, 0.88, 0.92) });
+
+  const lines = [
+    "1. Local-First Processing: All PDF rendering, text editing, and compression run offline.",
+    "2. Background Color Matching: Edits sample perimeter pixels so replacements blend cleanly.",
+    "3. Native macOS Vision OCR: Scanned pages are recognized on-device without cloud uploads.",
+    "4. Automation Ready: Built-in local HTTP API (127.0.0.1:4890) and stdio MCP server.",
+  ];
+  lines.forEach((line, idx) => {
+    p1.drawText(line, { x: 56, y: 680 - idx * 28, size: 12, font: fontReg, color: rgb(0.18, 0.22, 0.28) });
+  });
+
+  p1.drawRectangle({ x: 56, y: 470, width: 483, height: 76, color: rgb(0.95, 0.97, 1.0), borderColor: rgb(0.75, 0.83, 0.96), borderWidth: 1 });
+  p1.drawText("Summary: Approved for release across macOS, Windows, and Linux.", { x: 74, y: 504, size: 12, font: fontBold, color: rgb(0.15, 0.35, 0.78) });
+
+  const p2 = doc.addPage([595.28, 841.89]);
+  p2.drawText("Appendix A: Release Checklist", { x: 56, y: 760, size: 18, font: fontBold, color: rgb(0.1, 0.14, 0.22) });
+  p2.drawText("All 20 automated end-to-end tasks verified cleanly.", { x: 56, y: 730, size: 12, font: fontReg, color: rgb(0.3, 0.35, 0.42) });
+
+  return doc.save();
+}
+
 export async function buildEditedPdf(
   originalBytes: Uint8Array,
   pages: PageState[],

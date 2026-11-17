@@ -16,6 +16,7 @@ import type { Annotation, PageState, PdfMetadata, ToolType } from "./types/pdf";
 import {
   buildEditedPdf,
   createBlankPdf,
+  createDemoPdf,
   exportPageWithAnnotationsToPng,
   extractSinglePagePdf,
   mergePdfBytes,
@@ -176,7 +177,7 @@ export function App() {
             pageCount: doc.numPages,
             pdfVersion: "1.7",
             fileSize: bytes.byteLength,
-            title: "Новый документ",
+            title: "Untitled Document",
             author: null,
             subject: null,
             creator: "Mac PDF Editor",
@@ -625,6 +626,12 @@ export function App() {
   }, [theme]);
 
   useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("demo") === "1") {
+      if (params.get("theme") === "light") setTheme("light");
+      createDemoPdf().then((bytes) => loadPdfFromBytes(bytes, null, true));
+      return;
+    }
     const lastPath = localStorage.getItem("mac_pdf_last_path");
     if (!lastPath) return;
     invoke<ArrayBuffer>("read_pdf_bytes", { path: lastPath })
@@ -638,6 +645,7 @@ export function App() {
 
   // Control API bridge from Rust HTTP Server (127.0.0.1:4890)
   useEffect(() => {
+    if (!("__TAURI_INTERNALS__" in window)) return;
     let unlisten: (() => void) | null = null;
 
     listen<{ reqId: string; action: string; payload: Record<string, unknown> }>(
@@ -852,6 +860,7 @@ export function App() {
 
   // Native Tauri v2 Drag & Drop support
   useEffect(() => {
+    if (!("__TAURI_INTERNALS__" in window)) return;
     let unlisten: (() => void) | null = null;
     getCurrentWebview()
       .onDragDropEvent(async (event) => {

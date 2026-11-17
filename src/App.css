@@ -267,6 +267,13 @@ button:disabled {
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
   display: flex;
+  max-width: 100%;
+}
+
+.thumb-canvas-wrap canvas {
+  max-width: 100%;
+  height: auto !important;
+  display: block;
 }
 
 .thumb-footer {
@@ -579,6 +586,7 @@ button:disabled {
   gap: 6px;
   margin-bottom: 12px;
   font-size: 12.5px;
+  color: var(--text-main);
 }
 
 .field input[type="range"] {

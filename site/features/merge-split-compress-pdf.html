@@ -3,22 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Merge, Split, Rotate &amp; Compress PDF Offline — Mac PDF Editor</title>
+  <title>Merge, Split, Rotate &amp; Compress PDF Offline: Mac PDF Editor</title>
   <meta name="description" content="Organize PDF pages, rotate 90° with aligned annotations, split or merge documents, and compress PDFs using Rust lopdf and zero-copy IPC." />
   <link rel="canonical" href="https://document-software.github.io/mac-pdf-editor/features/merge-split-compress-pdf.html" />
   <link rel="icon" type="image/png" href="../assets/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600&family=IBM+Plex+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/style.css" />
 </head>
 <body>
   <header class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="../"><img src="../assets/icon.png" alt="Mac PDF Editor" width="26" height="26" style="border-radius:6px;" /><span>Mac PDF Editor</span></a>
+      <a class="brand" href="../"><img src="../assets/icon.png" alt="Mac PDF Editor" width="26" height="26" class="brand-icon" /><span>Mac PDF Editor</span></a>
       <nav class="nav-links">
         <a href="../">Home</a>
         <a href="./edit-pdf-text.html">Edit Text</a>
         <a href="./macos-vision-ocr.html">Vision OCR</a>
         <a href="./annotate-sign-pdf.html">Annotate &amp; Sign</a>
-        <a href="./mcp-http-api.html">MCP &amp; API</a>
+        <a href="./mcp-http-api.html">Automation</a>
       </nav>
     </div>
   </header>
@@ -34,24 +37,24 @@
         <li><strong>Reorder Pages:</strong> Move any page up or down in the sidebar with live thumbnail previews.</li>
         <li><strong>Rotate 90°:</strong> Rotate pages while keeping all added text, signatures, and highlights aligned 1:1 on export.</li>
         <li><strong>Duplicate &amp; Delete:</strong> Clone template pages or remove unwanted sheets with full Undo/Redo (<code>⌘Z</code> / <code>⇧⌘Z</code>).</li>
-        <li><strong>Extract Single Page (Split):</strong> Save any individual page—along with its edits—as a standalone PDF file.</li>
+        <li><strong>Extract Single Page (Split):</strong> Save any individual page, along with its edits, as a standalone PDF file.</li>
         <li><strong>Merge PDFs:</strong> Append one or more external PDF files into the active document.</li>
       </ul>
 
       <h2>Rust <code>lopdf</code> Compression &amp; Metadata</h2>
-      <p>Clicking <strong>Compress</strong> runs <code>prune_objects()</code> and <code>compress()</code> in Rust directly on the current document state—even before you save to disk. You can also inspect PDF version, file size, title, author, and creator in the Inspector.</p>
+      <p>Clicking <strong>Compress</strong> runs <code>prune_objects()</code> and <code>compress()</code> in Rust directly on the current document state, even before you save to disk. You can also inspect PDF version, file size, title, author, and creator in the Inspector.</p>
 
       <div class="cta-row" style="justify-content:flex-start; margin-top:28px;">
-        <a class="btn btn-primary" href="https://github.com/document-software/mac-pdf-editor/releases">Download App</a>
-        <a class="btn" href="./annotate-sign-pdf.html">Next: Annotate &amp; Sign →</a>
+        <a class="btn-key-primary" href="https://github.com/document-software/mac-pdf-editor/releases">Download App</a>
+        <a class="link-quiet" href="./annotate-sign-pdf.html">Next: Annotate &amp; Sign</a>
       </div>
     </article>
   </main>
 
-  <footer>
+  <footer class="mast">
     <div class="container footer-grid">
-      <div><strong>Mac PDF Editor</strong> • Open-Source (MIT)</div>
-      <div><a href="../">Home</a> • <a href="https://github.com/document-software/mac-pdf-editor">GitHub</a></div>
+      <div><strong>Mac PDF Editor</strong> Open-Source (MIT)</div>
+      <div><a href="../">Home</a> <a href="https://github.com/document-software/mac-pdf-editor">GitHub</a></div>
     </div>
   </footer>
 </body>

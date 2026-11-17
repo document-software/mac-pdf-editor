@@ -3,16 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PDF Automation via MCP Server &amp; Local HTTP API — Mac PDF Editor</title>
+  <title>PDF Automation via MCP Server &amp; Local HTTP API: Mac PDF Editor</title>
   <meta name="description" content="Control Mac PDF Editor programmatically via its built-in HTTP API on 127.0.0.1:4890 or connect AI agents via the Model Context Protocol (MCP) stdio server." />
   <link rel="canonical" href="https://document-software.github.io/mac-pdf-editor/features/mcp-http-api.html" />
   <link rel="icon" type="image/png" href="../assets/icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600&family=IBM+Plex+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/style.css" />
 </head>
 <body>
   <header class="nav">
     <div class="container nav-inner">
-      <a class="brand" href="../"><img src="../assets/icon.png" alt="Mac PDF Editor" width="26" height="26" style="border-radius:6px;" /><span>Mac PDF Editor</span></a>
+      <a class="brand" href="../"><img src="../assets/icon.png" alt="Mac PDF Editor" width="26" height="26" class="brand-icon" /><span>Mac PDF Editor</span></a>
       <nav class="nav-links">
         <a href="../">Home</a>
         <a href="./edit-pdf-text.html">Edit Text</a>
@@ -41,21 +44,21 @@
 
       <h2>Available MCP Tools &amp; API Actions</h2>
       <ul>
-        <li><code>pdf_editor_health</code> / <code>GET /health</code> — verify app status</li>
-        <li><code>pdf_editor_get_state</code> / <code>GET /state</code> — inspect open file, pages, zoom, metadata</li>
-        <li><code>pdf_editor_open</code> — open any local PDF in the live UI</li>
-        <li><code>pdf_editor_extract_text</code> &amp; <code>pdf_editor_search_text</code> — read &amp; search PDF content</li>
-        <li><code>pdf_editor_add_annotation</code> — programmatically place text, highlights, rectangles, signatures, or stamps</li>
-        <li><code>pdf_editor_page_rotate</code>, <code>page_duplicate</code>, <code>page_delete</code> — manipulate pages</li>
-        <li><code>pdf_editor_save</code>, <code>pdf_editor_compress</code>, <code>pdf_editor_export_png</code> — save, compress via Rust <code>lopdf</code>, and export PNG</li>
+        <li><code>pdf_editor_health</code> / <code>GET /health</code>: verify app status</li>
+        <li><code>pdf_editor_get_state</code> / <code>GET /state</code>: inspect open file, pages, zoom, metadata</li>
+        <li><code>pdf_editor_open</code>: open any local PDF in the live UI</li>
+        <li><code>pdf_editor_extract_text</code> &amp; <code>pdf_editor_search_text</code>: read &amp; search PDF content</li>
+        <li><code>pdf_editor_add_annotation</code>: programmatically place text, highlights, rectangles, signatures, or stamps</li>
+        <li><code>pdf_editor_page_rotate</code>, <code>page_duplicate</code>, <code>page_delete</code>: manipulate pages</li>
+        <li><code>pdf_editor_save</code>, <code>pdf_editor_compress</code>, <code>pdf_editor_export_png</code>: save, compress via Rust <code>lopdf</code>, and export PNG</li>
       </ul>
     </article>
   </main>
 
-  <footer>
+  <footer class="mast">
     <div class="container footer-grid">
-      <div><strong>Mac PDF Editor</strong> • Open-Source (MIT)</div>
-      <div><a href="../">Home</a> • <a href="https://github.com/document-software/mac-pdf-editor">GitHub</a></div>
+      <div><strong>Mac PDF Editor</strong> Open-Source (MIT)</div>
+      <div><a href="../">Home</a> <a href="https://github.com/document-software/mac-pdf-editor">GitHub</a></div>
     </div>
   </footer>
 </body>

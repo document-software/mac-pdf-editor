@@ -13,6 +13,7 @@ dist-ssr
 *.local
 src-tauri/target
 tests/output
+.hallmark
 
 # Editor directories and files
 .vscode/*

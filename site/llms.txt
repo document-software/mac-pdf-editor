@@ -1,0 +1,26 @@
+# Mac PDF Editor
+
+> Free, open-source, cross-platform desktop PDF editor for macOS, Windows, and Linux built with Tauri v2 (Rust), React, PDF.js, pdf-lib, lopdf, and offline Apple Vision OCR.
+
+- Repository: https://github.com/document-software/mac-pdf-editor
+- Website: https://document-software.github.io/mac-pdf-editor/
+- License: MIT
+- App Size: ~6 MB native binary
+
+## Core Capabilities
+- Edit existing PDF text with bounding-box sizing and automatic background color sampling (`sampleBackgroundColor`)
+- Offline macOS Vision OCR (`VNRecognizeTextRequest`, English + Cyrillic) for scanned PDFs
+- Highlight, draw freehand signatures, insert PNG/JPG stamps, whiteout/redact regions
+- Reorder, rotate (90°), duplicate, delete, split, and merge PDF pages
+- Compress PDFs via Rust `lopdf` (`prune_objects` + `compress`)
+- Export annotated pages to PNG
+- Local HTTP Control API (`127.0.0.1:4890`) and stdio MCP server (`mcp/server.mjs`)
+
+## Documentation Pages
+- Edit PDF Text: https://document-software.github.io/mac-pdf-editor/features/edit-pdf-text.html
+- macOS Vision OCR: https://document-software.github.io/mac-pdf-editor/features/macos-vision-ocr.html
+- Merge, Split & Compress: https://document-software.github.io/mac-pdf-editor/features/merge-split-compress-pdf.html
+- Annotate & Sign: https://document-software.github.io/mac-pdf-editor/features/annotate-sign-pdf.html
+- MCP & HTTP API: https://document-software.github.io/mac-pdf-editor/features/mcp-http-api.html
+- Alternative to Adobe Acrobat & PDF Expert: https://document-software.github.io/mac-pdf-editor/compare/adobe-acrobat-alternative.html
+- How to Edit Scanned PDFs on Mac: https://document-software.github.io/mac-pdf-editor/guides/how-to-edit-scanned-pdf-mac.html

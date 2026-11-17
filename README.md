@@ -1,44 +1,69 @@
-# Mac PDF Editor
+# Mac PDF Editor — Free Open-Source PDF Editor for macOS, Windows & Linux (Offline OCR & MCP API)
 
-A fast, open-source, cross-platform desktop PDF editor built with **Tauri v2 (Rust)**, **React + TypeScript**, **PDF.js**, **pdf-lib**, **lopdf**, and **macOS Vision OCR**.
+[![Build Cross-Platform Releases](https://github.com/document-software/mac-pdf-editor/actions/workflows/build.yml/badge.svg)](https://github.com/document-software/mac-pdf-editor/actions/workflows/build.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+[![Website](https://img.shields.io/badge/Website-GitHub%20Pages-0b0f19)](https://document-software.github.io/mac-pdf-editor/)
 
-Designed for native macOS ergonomics (Retina HiDPI, `⌘O`/`⌘S`/`⌘Z` shortcuts, native dialogs, light/dark themes) with automated GitHub Actions builds for **macOS (Universal arm64 + x86_64)**, **Windows**, and **Linux**.
+> **A lightweight (~6 MB), privacy-first desktop PDF editor** built with **Tauri v2 (Rust)**, **React + TypeScript**, **PDF.js**, **pdf-lib**, **lopdf**, and **macOS Vision OCR**. A fast, free open-source alternative to **Adobe Acrobat Pro**, **PDF Expert**, and **Apple Preview**.
 
-## Features
+🌐 **Official Website & Guides:** [https://document-software.github.io/mac-pdf-editor/](https://document-software.github.io/mac-pdf-editor/)
 
-- **View & Navigate**: Sharp HiDPI rendering via `pdfjs-dist`, zoom controls, thumbnail sidebar, light/dark themes.
-- **Edit Existing & Scanned Text**:
-  - Highlights all editable text blocks on the page when **Text (`T`)** tool is active.
-  - Inline editor sized to the exact bounding box of the target text.
-  - Automatic **background color sampling** from the rendered canvas for seamless text replacement without harsh white patches.
-  - Built-in **macOS Vision OCR** (`OCR` button) to recognize and edit text on scanned/image PDFs.
-  - Full Unicode / Cyrillic support when saving.
-- **Annotations & Signing**: Highlights, rectangles, whiteout/redaction, freehand drawing/signatures, PNG/JPG image & stamp insertion, full Undo/Redo (`⌘Z` / `⇧⌘Z`).
-- **Page Management**: Reorder, rotate (`90°`), duplicate, delete, extract single pages, merge multiple PDFs, create blank A4 PDFs.
-- **Rust PDF Engine (`lopdf`)**: Inspect PDF metadata, compress/optimize PDFs, export pages with annotations to PNG.
-- **HTTP Control API & MCP Server**: Control the live app programmatically via `http://127.0.0.1:4890` or Model Context Protocol ([`mcp/server.mjs`](mcp/server.mjs)).
+---
 
-See [docs/HOW_IT_WORKS.md](docs/HOW_IT_WORKS.md) for a detailed architectural breakdown.
+## Why Mac PDF Editor?
 
-## Local Development
+| Feature | Mac PDF Editor (OSS) | Apple Preview | Adobe Acrobat Pro | PDF Expert |
+| :--- | :--- | :--- | :--- | :--- |
+| **Price** | **Free (MIT)** | Built-in (macOS) | $19.99–$29.99/mo | $79.99/yr |
+| **Edit Existing Text + Background Match** | **Yes** | No | Yes | Pro only |
+| **Offline OCR for Scanned PDFs** | **Yes (Apple Vision)** | Copy only | Yes | Pro only |
+| **Cross-Platform (macOS / Win / Linux)** | **Yes** | macOS only | Win / macOS | Apple only |
+| **AI Agent Automation (MCP + HTTP API)** | **Yes (Built-in)** | No | No | No |
+| **Binary Size** | **~6 MB** | System | 1+ GB | ~150 MB |
 
-Requirements: Node.js 20+, Rust (`rustup`), Xcode Command Line Tools (macOS).
+---
+
+## Key Capabilities & Feature Pages
+
+- ✏️ **[Edit Existing PDF Text](https://document-software.github.io/mac-pdf-editor/features/edit-pdf-text.html)** — Highlights all editable text blocks in **Text (`T`)** mode, matches input box dimensions to the original text run, and automatically samples surrounding canvas pixels (`sampleBackgroundColor`) so replacements blend seamlessly without harsh white patches. Full Unicode & Cyrillic support.
+- 🔍 **[Offline macOS Vision OCR](https://document-software.github.io/mac-pdf-editor/features/macos-vision-ocr.html)** — One-click text recognition for scanned PDFs using Apple's native `VNRecognizeTextRequest` (EN + RU), turning flat scans into clickable, editable text blocks with zero cloud uploads.
+- 📄 **[Merge, Split, Rotate & Compress PDF](https://document-software.github.io/mac-pdf-editor/features/merge-split-compress-pdf.html)** — Reorder, duplicate, delete, extract single pages, merge multiple PDFs, rotate `90°` with aligned annotations, and compress via Rust `lopdf` (`prune_objects` + `compress`).
+- 🖊️ **[Annotate, Highlight, Whiteout & Sign](https://document-software.github.io/mac-pdf-editor/features/annotate-sign-pdf.html)** — Translucent highlights (`H`), rectangles & whiteout redaction (`R`), freehand vector signatures (`D`), PNG/JPG stamp insertion with resize handles, and PNG export with annotations.
+- 🤖 **[MCP Server & HTTP Control API](https://document-software.github.io/mac-pdf-editor/features/mcp-http-api.html)** — Built-in HTTP API (`http://127.0.0.1:4890`) and stdio MCP server ([`mcp/server.mjs`](./mcp/server.mjs)) for Claude Desktop, Cursor, and Antigravity.
+
+---
+
+## Guides & Comparisons
+
+- 📖 **[How to Edit a Scanned PDF on Mac (Free Offline OCR Guide)](https://document-software.github.io/mac-pdf-editor/guides/how-to-edit-scanned-pdf-mac.html)**
+- ⚖️ **[Free Open-Source Alternative to Adobe Acrobat & PDF Expert](https://document-software.github.io/mac-pdf-editor/compare/adobe-acrobat-alternative.html)**
+- 🏗️ **[Technical Architecture & How It Works](./docs/HOW_IT_WORKS.md)**
+
+---
+
+## Local Development & Build
+
+Requirements: Node.js 20+, Rust (`rustup`), Xcode Command Line Tools (on macOS).
 
 ```bash
 npm install
 npm run tauri dev
 ```
 
-## Build `.app` / `.dmg`
+Build a production `.app` / `.dmg` / `.msi` / `.AppImage`:
 
 ```bash
 npm run tauri build
 ```
 
-## Run 20-Task Automated Test Suite
+## Run the 20-Task Automated Test Suite
 
-With the app running:
+With `Mac PDF Editor` running:
 
 ```bash
 node tests/run_20_tasks.mjs
 ```
+
+## License
+
+[MIT License](./LICENSE) © 2026 [document-software](https://github.com/document-software)

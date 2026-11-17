@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Offline macOS Vision OCR for Scanned PDFs — Mac PDF Editor</title>
+  <meta name="description" content="Convert scanned image PDFs into editable text blocks offline on macOS using Apple's native Vision framework (VNRecognizeTextRequest)." />
+  <link rel="canonical" href="https://document-software.github.io/mac-pdf-editor/features/macos-vision-ocr.html" />
+  <link rel="icon" type="image/png" href="../assets/icon.png" />
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="../"><img src="../assets/icon.png" alt="Mac PDF Editor" width="26" height="26" style="border-radius:6px;" /><span>Mac PDF Editor</span></a>
+      <nav class="nav-links">
+        <a href="../">Home</a>
+        <a href="./edit-pdf-text.html">Edit Text</a>
+        <a href="./merge-split-compress-pdf.html">Merge &amp; Compress</a>
+        <a href="./annotate-sign-pdf.html">Annotate &amp; Sign</a>
+        <a href="./mcp-http-api.html">MCP &amp; API</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="breadcrumb"><a href="../">Home</a> / Features / macOS Vision OCR</div>
+    <article class="prose">
+      <h1>Offline macOS Vision OCR for Scanned PDFs</h1>
+      <p>Scanned documents, invoices, and exported images have zero embedded text characters—making them impossible to edit in standard PDF readers. <strong>Mac PDF Editor</strong> solves this with zero external downloads by tapping directly into Apple's native <strong>Vision Framework</strong>.</p>
+
+      <h2>How It Works Under the Hood</h2>
+      <ol>
+        <li>Click <strong>OCR</strong> in the top toolbar or <strong>Run macOS Vision OCR</strong> in the Inspector.</li>
+        <li>The current page is rendered at <code>2.0x</code> resolution and passed to the Rust command <code>ocr_page_png</code>.</li>
+        <li>Rust invokes <code>VNRecognizeTextRequest</code> (<code>.accurate</code> mode, supporting <code>en-US</code> and <code>ru-RU</code>) locally on your Mac's Neural Engine / CPU.</li>
+        <li>Detected text lines and normalized bounding boxes are overlaid onto the page and immediately highlighted in <strong>Text (T)</strong> mode for one-click editing.</li>
+      </ol>
+
+      <h2>Why Native Apple Vision?</h2>
+      <ul>
+        <li><strong>Zero bloat:</strong> No 50+ MB Tesseract language packs to bundle or download.</li>
+        <li><strong>100% private:</strong> Your contracts, IDs, and financial scans never leave your Mac.</li>
+        <li><strong>High accuracy:</strong> Handles skewed scans, multi-column layouts, and mixed English/Cyrillic text.</li>
+      </ul>
+
+      <div class="cta-row" style="justify-content:flex-start; margin-top:28px;">
+        <a class="btn btn-primary" href="../guides/how-to-edit-scanned-pdf-mac.html">Read Step-by-Step OCR Guide</a>
+        <a class="btn" href="./merge-split-compress-pdf.html">Next: Merge &amp; Compress →</a>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><strong>Mac PDF Editor</strong> • Open-Source (MIT)</div>
+      <div><a href="../">Home</a> • <a href="https://github.com/document-software/mac-pdf-editor">GitHub</a></div>
+    </div>
+  </footer>
+</body>
+</html>

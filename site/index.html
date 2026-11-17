@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mac PDF Editor — Free Open-Source PDF Editor for macOS, Windows &amp; Linux</title>
+  <meta name="description" content="Free open-source desktop PDF editor built with Rust (Tauri v2), PDF.js, pdf-lib, lopdf &amp; Apple Vision OCR. Edit PDF text, recognize scans, sign, merge, split, and compress offline." />
+  <link rel="canonical" href="https://document-software.github.io/mac-pdf-editor/" />
+  <link rel="icon" type="image/png" href="./assets/icon.png" />
+  <link rel="stylesheet" href="./assets/style.css" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mac PDF Editor — Free Open-Source PDF Editor with Vision OCR &amp; MCP API" />
+  <meta property="og:description" content="Edit existing PDF text with automatic background color matching, run offline macOS Vision OCR on scans, sign, merge, split &amp; compress PDFs locally." />
+  <meta property="og:url" content="https://document-software.github.io/mac-pdf-editor/" />
+  <meta property="og:image" content="https://document-software.github.io/mac-pdf-editor/assets/icon.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Mac PDF Editor",
+    "operatingSystem": "macOS, Windows, Linux",
+    "applicationCategory": "ProductivityApplication",
+    "license": "https://opensource.org/licenses/MIT",
+    "softwareVersion": "0.1.0",
+    "url": "https://document-software.github.io/mac-pdf-editor/",
+    "downloadUrl": "https://github.com/document-software/mac-pdf-editor/releases",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Free open-source cross-platform PDF editor built with Tauri v2 (Rust), PDF.js, pdf-lib, lopdf, and macOS Vision OCR. Features seamless text replacement, offline OCR, page organization, signing, compression, and an MCP/HTTP automation API."
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is Mac PDF Editor completely free and offline?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Mac PDF Editor is 100% open-source (MIT License), works completely offline on your computer without cloud uploads, telemetry, or subscriptions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Mac PDF Editor edit text in scanned PDFs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. On macOS, the built-in Apple Vision OCR button recognizes text on scanned pages offline and highlights every detected line so you can click and edit it immediately."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does Mac PDF Editor avoid white patches when replacing text?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "When you click an existing text block, the editor samples 16 perimeter pixels from the rendered canvas to compute the median background color and matches both the cover layer and text contrast automatically."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="./">
+        <img src="./assets/icon.png" alt="Mac PDF Editor icon" width="28" height="28" style="border-radius:6px;" />
+        <span>Mac PDF Editor</span>
+      </a>
+      <nav class="nav-links">
+        <a href="./features/edit-pdf-text.html">Edit Text</a>
+        <a href="./features/macos-vision-ocr.html">Vision OCR</a>
+        <a href="./features/merge-split-compress-pdf.html">Merge &amp; Compress</a>
+        <a href="./features/annotate-sign-pdf.html">Annotate &amp; Sign</a>
+        <a href="./features/mcp-http-api.html">MCP &amp; API</a>
+        <a href="./compare/adobe-acrobat-alternative.html">Compare</a>
+        <a href="https://github.com/document-software/mac-pdf-editor">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <span class="badge">Open-Source • ~6 MB Native Binary • Zero Cloud Uploads</span>
+      <h1>The Fast, Open-Source PDF Editor for macOS, Windows &amp; Linux</h1>
+      <p class="lead">
+        Edit existing PDF text with automatic background color matching, run offline <strong>Apple Vision OCR</strong> on scanned documents, sign, highlight, merge, split, and compress PDFs — powered by Rust (Tauri v2 + lopdf), PDF.js, and pdf-lib.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://github.com/document-software/mac-pdf-editor/releases">Download Latest Release</a>
+        <a class="btn" href="https://github.com/document-software/mac-pdf-editor">View Source on GitHub</a>
+        <a class="btn" href="./guides/how-to-edit-scanned-pdf-mac.html">Read OCR Editing Guide</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Everything Your PDF Workflow Needs</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3><a href="./features/edit-pdf-text.html">Edit PDF Text Seamlessly</a></h3>
+          <p>Highlights all editable text blocks on the page. Click any line to edit with exact bounding-box sizing and automatic background color sampling.</p>
+          <a href="./features/edit-pdf-text.html">Learn how text editing works →</a>
+        </div>
+        <div class="card">
+          <h3><a href="./features/macos-vision-ocr.html">Offline macOS Vision OCR</a></h3>
+          <p>Turn scanned image PDFs into editable documents in one click using Apple's native Vision framework (English &amp; Cyrillic supported offline).</p>
+          <a href="./features/macos-vision-ocr.html">Explore Vision OCR →</a>
+        </div>
+        <div class="card">
+          <h3><a href="./features/merge-split-compress-pdf.html">Merge, Split &amp; Compress</a></h3>
+          <p>Reorder, rotate (90°), duplicate, delete, or extract single pages. Combine multiple PDFs and optimize file size with the Rust <code>lopdf</code> engine.</p>
+          <a href="./features/merge-split-compress-pdf.html">View page &amp; compression tools →</a>
+        </div>
+        <div class="card">
+          <h3><a href="./features/annotate-sign-pdf.html">Annotate, Redact &amp; Sign</a></h3>
+          <p>Highlight passages, draw freehand signatures, insert PNG/JPG stamps, whiteout sensitive data, and export pages with annotations to PNG.</p>
+          <a href="./features/annotate-sign-pdf.html">See annotation tools →</a>
+        </div>
+        <div class="card">
+          <h3><a href="./features/mcp-http-api.html">MCP Server &amp; HTTP Control API</a></h3>
+          <p>Automate PDF workflows or let AI agents (Claude, Cursor, Antigravity) control the live editor via <code>127.0.0.1:4890</code> and stdio MCP.</p>
+          <a href="./features/mcp-http-api.html">Read API &amp; MCP docs →</a>
+        </div>
+        <div class="card">
+          <h3><a href="./compare/adobe-acrobat-alternative.html">No Subscriptions, Ever</a></h3>
+          <p>Built as a lightweight (~6 MB) open-source alternative to Adobe Acrobat Pro and PDF Expert with full local privacy and zero telemetry.</p>
+          <a href="./compare/adobe-acrobat-alternative.html">Compare alternatives →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Mac PDF Editor vs. Traditional PDF Software</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Capability</th>
+            <th>Mac PDF Editor (OSS)</th>
+            <th>Apple Preview</th>
+            <th>Adobe Acrobat Pro</th>
+            <th>PDF Expert</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Price</td>
+            <td><strong>Free (MIT)</strong></td>
+            <td>Built-in (macOS only)</td>
+            <td>$19.99–$29.99 / mo</td>
+            <td>$79.99 / yr</td>
+          </tr>
+          <tr>
+            <td>Edit Existing Text + Background Match</td>
+            <td><strong>Yes</strong></td>
+            <td>No (overlay only)</td>
+            <td>Yes</td>
+            <td>Yes (Pro)</td>
+          </tr>
+          <tr>
+            <td>Offline OCR for Scanned PDFs</td>
+            <td><strong>Yes (Apple Vision)</strong></td>
+            <td>Live Text copy only</td>
+            <td>Yes</td>
+            <td>Yes (Pro)</td>
+          </tr>
+          <tr>
+            <td>Cross-Platform (macOS / Win / Linux)</td>
+            <td><strong>Yes</strong></td>
+            <td>macOS only</td>
+            <td>Win / macOS</td>
+            <td>Apple only</td>
+          </tr>
+          <tr>
+            <td>AI Agent Automation (MCP + HTTP API)</td>
+            <td><strong>Yes (Built-in)</strong></td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>App Size</td>
+            <td><strong>~6 MB</strong></td>
+            <td>System</td>
+            <td>1+ GB</td>
+            <td>~150 MB</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section">
+      <h2>20 Built-In PDF Tasks Tested End-to-End</h2>
+      <p style="color: var(--muted);">Every release is verified against a real 25-page, 9.6 MB PDF benchmark covering:</p>
+      <div class="grid-3">
+        <div class="card"><p>1–5: HTTP API &amp; MCP handshake, open large PDFs, inspect <code>lopdf</code> metadata, extract text, full-document search.</p></div>
+        <div class="card"><p>6–12: Unicode/Cyrillic text blocks, existing text replacement with background sampling, highlights, borders, whiteout, vector signatures, PNG stamps.</p></div>
+        <div class="card"><p>13–20: Page rotation with aligned annotations, duplicate/delete/reorder pages, save &amp; verify, PNG export, Rust <code>lopdf</code> compression, watermarks, split &amp; merge.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong>Mac PDF Editor</strong> by <a href="https://github.com/document-software">document-software</a> • MIT License
+      </div>
+      <div>
+        <a href="./guides/how-to-edit-scanned-pdf-mac.html">Guides</a> •
+        <a href="./llms.txt">llms.txt</a> •
+        <a href="./sitemap.xml">sitemap.xml</a> •
+        <a href="https://github.com/document-software/mac-pdf-editor">GitHub</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

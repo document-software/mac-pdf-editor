@@ -24,3 +24,17 @@
 - MCP & HTTP API: https://document-software.github.io/mac-pdf-editor/features/mcp-http-api.html
 - Alternative to Adobe Acrobat & PDF Expert: https://document-software.github.io/mac-pdf-editor/compare/adobe-acrobat-alternative.html
 - How to Edit Scanned PDFs on Mac: https://document-software.github.io/mac-pdf-editor/guides/how-to-edit-scanned-pdf-mac.html
+
+## Dedicated Tool Pages
+- Merge PDF: https://document-software.github.io/mac-pdf-editor/tools/merge-pdf-mac.html
+- Split PDF: https://document-software.github.io/mac-pdf-editor/tools/split-pdf-pages.html
+- Compress PDF: https://document-software.github.io/mac-pdf-editor/tools/compress-pdf-mac.html
+- Rotate PDF: https://document-software.github.io/mac-pdf-editor/tools/rotate-pdf-pages.html
+- Sign PDF: https://document-software.github.io/mac-pdf-editor/tools/sign-pdf-mac.html
+- Redact / Whiteout PDF: https://document-software.github.io/mac-pdf-editor/tools/redact-whiteout-pdf.html
+- Highlight & Annotate PDF: https://document-software.github.io/mac-pdf-editor/tools/highlight-annotate-pdf.html
+- PDF to PNG: https://document-software.github.io/mac-pdf-editor/tools/pdf-to-png-mac.html
+- Extract & Search Text: https://document-software.github.io/mac-pdf-editor/tools/extract-text-from-pdf.html
+- Watermark & Page Numbers: https://document-software.github.io/mac-pdf-editor/tools/add-watermark-page-numbers-pdf.html
+- Reorder & Delete Pages: https://document-software.github.io/mac-pdf-editor/tools/reorder-delete-pdf-pages.html
+- Edit PDF Metadata: https://document-software.github.io/mac-pdf-editor/tools/edit-pdf-metadata.html

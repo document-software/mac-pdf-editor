@@ -1,6 +1,6 @@
 # How Mac PDF Editor Works
 
-This document explains the internal architecture of **Mac PDF Editor** — a cross-platform desktop PDF editor built with **Tauri v2 (Rust)**, **React + TypeScript**, **PDF.js**, **pdf-lib**, **lopdf**, and **Apple Vision OCR**.
+This document explains the internal architecture of **Mac PDF Editor**, a cross-platform desktop PDF editor built with **Tauri v2 (Rust)**, **React + TypeScript**, **PDF.js**, **pdf-lib**, **lopdf**, and **Apple Vision OCR**.
 
 ---
 
@@ -33,7 +33,7 @@ This document explains the internal architecture of **Mac PDF Editor** — a cro
 
 ## 2. How Text Editing Works
 
-PDF files do not store paragraphs like Word documents — they store glyphs at absolute `(x, y)` coordinates or, in scanned PDFs, flat raster images. Mac PDF Editor handles both cases:
+PDF files do not store paragraphs like Word documents; they store glyphs at absolute `(x, y)` coordinates or, in scanned PDFs, flat raster images. Mac PDF Editor handles both cases:
 
 ### A. Native PDF Text Layer (`pdfjs-dist`)
 1. When a page renders, [`PdfPageCanvas.tsx`](../src/components/PdfPageCanvas.tsx) calls `page.getTextContent()` and transforms every text run using `pdfjsLib.Util.transform(viewport.transform, item.transform)`.
@@ -59,7 +59,7 @@ If a PDF page has no embedded text layer (e.g., scanned documents), clicking **O
 ### D. Unicode & Cyrillic Support in `pdf-lib`
 Standard PDF Type1 fonts (`Helvetica`) only support WinAnsi characters. When saving:
 - ASCII / Latin-1 strings are written as native PDF vector text (`pdfPage.drawText`).
-- Unicode / Cyrillic strings are automatically rendered at `3x` Retina scale to a transparent PNG and embedded via `outDoc.embedPng` so any language renders cleanly without font-encoding errors.
+- Unicode and Cyrillic strings are automatically rendered at `3x` Retina scale to a transparent PNG and embedded via `outDoc.embedPng` so any language exports without font-encoding errors.
 
 ---
 
@@ -73,9 +73,9 @@ Standard PDF Type1 fonts (`Helvetica`) only support WinAnsi characters. When sav
 ## 4. Local HTTP Control API & MCP Server
 
 When **Mac PDF Editor** is running, it exposes a local HTTP API on **`http://127.0.0.1:4890`**:
-- `GET /health` — health check
-- `GET /state` — current file path, page count, zoom, annotations count, `lopdf` metadata
-- `POST /command` — `{ "action": "...", "payload": { ... } }` supporting `open`, `new_blank`, `extract_text`, `search_text`, `annotation_add`, `annotation_clear`, `page_select`, `page_rotate`, `page_duplicate`, `page_delete`, `save`, `compress`, `export_png`.
+- `GET /health`: health check
+- `GET /state`: current file path, page count, zoom, annotations count, and `lopdf` metadata
+- `POST /command`: `{ "action": "...", "payload": { ... } }` supporting `open`, `new_blank`, `extract_text`, `search_text`, `annotation_add`, `annotation_clear`, `page_select`, `page_rotate`, `page_duplicate`, `page_delete`, `save`, `compress`, and `export_png`.
 
 ### Connecting via MCP (`mcp/server.mjs`)
 Add this to your MCP client configuration (Claude Desktop, Cursor, Antigravity):
